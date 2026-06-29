@@ -4,6 +4,10 @@
 
 package com.mycompany.calculator;
 
+import Controller.Calculator_Controller;
+import Model.Calculator_Model;
+import View.Calculator_GUI;
+
 /**
  *
  * @author ADMIN
@@ -11,6 +15,12 @@ package com.mycompany.calculator;
 public class Calculator {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Calculator_GUI view = new Calculator_GUI();
+
+        Calculator_Model model = new Calculator_Model();
+
+        new Calculator_Controller(view, model);
+
+        view.setVisible(true);
     }
 }

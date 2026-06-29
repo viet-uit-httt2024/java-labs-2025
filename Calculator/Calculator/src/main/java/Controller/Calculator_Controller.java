@@ -18,7 +18,7 @@ public class Calculator_Controller {
     private Calculator_GUI view;
     private Calculator_Model model;
 
-    private double currentResult;
+    private double currentResult = 0;
     private String currentOperator = "";
     
     //Kiểm tra có phải là toán tử đầu tiên hay không
@@ -65,7 +65,7 @@ public class Calculator_Controller {
             currentResult = number;
             firstInput = false;
         } else{
-            currentResult = model.calculate(number, currentResult, op);
+            currentResult = model.calculate(currentResult, number, currentOperator);
         }
         currentOperator = op;
         
@@ -74,9 +74,9 @@ public class Calculator_Controller {
     }
     public void addOperatorEvents() {
         view.getBtPlus().addActionListener(e-> processOp("+"));
-        view.getBtPlus().addActionListener(e-> processOp("-"));
-        view.getBtPlus().addActionListener(e-> processOp("*"));
-        view.getBtPlus().addActionListener(e-> processOp("/"));
+        view.getBtMinus().addActionListener(e-> processOp("-"));
+        view.getBtTimes().addActionListener(e-> processOp("*"));
+        view.getBtDivine().addActionListener(e-> processOp("/"));
     }
 
     public void addEqualEvent() {
@@ -86,7 +86,7 @@ public class Calculator_Controller {
             }
             
             double number = Double.parseDouble(view.getTfResult().getText());
-            currentResult = model.calculate(number, currentResult, currentOperator);
+            currentResult = model.calculate(currentResult, number, currentOperator);
             view.getTfResult().setText(String.valueOf(currentResult));
             firstInput = true;
         }
@@ -99,7 +99,7 @@ public class Calculator_Controller {
     public void addClearEvent() {
         view.getBtC().addActionListener(e -> {
 
-            currrentResult = 0;
+            currentResult = 0;
             currentOperator = "";
             firstInput = true;
             view.getTfResult().setText("");

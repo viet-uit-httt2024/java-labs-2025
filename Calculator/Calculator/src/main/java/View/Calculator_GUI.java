@@ -242,7 +242,7 @@ public class Calculator_GUI extends javax.swing.JFrame {
         return btC;
     }
     
-    public javax.swing.JButton getDot() {
+    public javax.swing.JButton getBtDot() {
         return btDot;
     }
 
