@@ -9,7 +9,7 @@ package View;
  * @author ADMIN
  */
 public class Calculator_GUI extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Calculator_GUI.class.getName());
 
     /**
@@ -42,7 +42,7 @@ public class Calculator_GUI extends javax.swing.JFrame {
         bt8 = new javax.swing.JButton();
         bt9 = new javax.swing.JButton();
         btDivine = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        btDot = new javax.swing.JButton();
         bt0 = new javax.swing.JButton();
         btC = new javax.swing.JButton();
         btTimes = new javax.swing.JButton();
@@ -66,6 +66,7 @@ public class Calculator_GUI extends javax.swing.JFrame {
         bt4.setText("4");
 
         bt5.setText("5");
+        bt5.addActionListener(this::bt5ActionPerformed);
 
         bt6.setText("6");
 
@@ -79,7 +80,7 @@ public class Calculator_GUI extends javax.swing.JFrame {
 
         btDivine.setText("/");
 
-        jButton13.setText(".");
+        btDot.setText(".");
 
         bt0.setText("0");
 
@@ -103,7 +104,7 @@ public class Calculator_GUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btDot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(bt7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(bt4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(bt1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
@@ -156,7 +157,7 @@ public class Calculator_GUI extends javax.swing.JFrame {
                     .addComponent(btDivine))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton13)
+                    .addComponent(btDot)
                     .addComponent(bt0)
                     .addComponent(btC)
                     .addComponent(btTimes))
@@ -190,6 +191,83 @@ public class Calculator_GUI extends javax.swing.JFrame {
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bt1ActionPerformed
+
+    private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt5ActionPerformed
+    // =======================
+    // Getter | => Controller truy cập các thành phần UI qua Getter
+    // =======================
+
+    public javax.swing.JButton getBt1() {
+        return bt1;
+    }
+
+    public javax.swing.JButton getBt2() {
+        return bt2;
+    }
+
+    public javax.swing.JButton getBt3() {
+        return bt3;
+    }
+    
+    public javax.swing.JButton getBt4() {
+        return bt4;
+    }
+
+    public javax.swing.JButton getBt5() {
+        return bt5;
+    }
+
+    public javax.swing.JButton getBt6() {
+        return bt6;
+    }
+
+    public javax.swing.JButton getBt7() {
+        return bt7;
+    }
+
+    public javax.swing.JButton getBt8() {
+        return bt8;
+    }
+
+    public javax.swing.JButton getBt9() {
+        return bt9;
+    }
+    
+    public javax.swing.JButton getBt0() {
+        return bt0;
+    }
+    public javax.swing.JButton getBtC() {
+        return btC;
+    }
+    
+    public javax.swing.JButton getDot() {
+        return btDot;
+    }
+
+    public javax.swing.JButton getBtPlus() {
+        return btPlus;
+    }
+
+    public javax.swing.JButton getBtMinus() {
+        return btMinus;
+    }
+    
+    public javax.swing.JButton getBtTimes() {
+        return btTimes;
+    }
+
+    public javax.swing.JButton getBtDivine() {
+        return btDivine;
+    }
+    public javax.swing.JTextField getTfResult() {
+        return tfResult;
+    }
+
+    public javax.swing.JButton getBtEqual() {
+        return btEqual;
+    }
 
     /**
      * @param args the command line arguments
@@ -229,11 +307,11 @@ public class Calculator_GUI extends javax.swing.JFrame {
     private javax.swing.JButton bt9;
     private javax.swing.JButton btC;
     private javax.swing.JButton btDivine;
+    private javax.swing.JButton btDot;
     private javax.swing.JButton btEqual;
     private javax.swing.JButton btMinus;
     private javax.swing.JButton btPlus;
     private javax.swing.JButton btTimes;
-    private javax.swing.JButton jButton13;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField tfResult;
