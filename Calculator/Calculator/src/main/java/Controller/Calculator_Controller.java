@@ -97,11 +97,28 @@ public class Calculator_Controller {
     
     //Thy
     public void addClearEvent() {
+        view.getBtC().addActionListener(e -> {
 
+            currrentResult = 0;
+            currentOperator = "";
+            firstInput = true;
+            view.getTfResult().setText("");
+
+        });
     }
 
     public void addDotEvent() {
+     view.getBtDot().addActionListener(e -> {
 
+            String text = view.getTfResult().getText();
+            if (!text.contains(".")) {
+                if (text.isEmpty()) {
+                    view.getTfResult().setText("0.");
+                } else {
+                    view.getTfResult().setText(text + ".");
+                }
+            }
+        });
     }
     
 }
